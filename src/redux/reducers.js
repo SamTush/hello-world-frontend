@@ -3,7 +3,7 @@ import { FETCH_RANDOM_GREETING_REQUEST, FETCH_RANDOM_GREETING_SUCCESS, FETCH_RAN
 const initialState = {
   greeting: '',
   loading: false,
-  error: null
+  error: null,
 };
 
 const greetingReducer = (state = initialState, action) => {
@@ -12,21 +12,21 @@ const greetingReducer = (state = initialState, action) => {
       return {
         ...state,
         loading: true,
-        error: null
+        error: null,
       };
     case FETCH_RANDOM_GREETING_SUCCESS:
       return {
         ...state,
         greeting: action.payload,
         loading: false,
-        error: null
+        error: null,
       };
     case FETCH_RANDOM_GREETING_FAILURE:
       return {
         ...state,
         greeting: '',
         loading: false,
-        error: action.error
+        error: action.error,
       };
     default:
       return state;
